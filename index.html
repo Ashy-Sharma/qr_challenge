@@ -18,61 +18,67 @@
     <style>
       * {
         background-color: #d5e1ef;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .box {
         background-color: #ffffff;
-        width: 25vw;
-        height: 70vh;
-        margin: 5% 0% 0% 34%;
-        border-radius: 4%;
+        width: min(90%, 400px);
+        max-height: calc(100vh - 2rem);
+        overflow: hidden;
+        border-radius: 20px;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-        padding: 3%;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
       }
 
       .box-img {
-        width: 80%;
-        height: 60%;
-        margin: 5% auto;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 0;
+        max-height: 50vh;
+        margin: 1rem auto;
         border-radius: 20px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
         background-image: url("images/image-qr-code.png");
-        background-size: cover; /* makes it fill the box */
-        background-position: center; /* keeps it centered */
-        background-repeat: no-repeat; /* no weird repeats */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
-      .box-text > h4 {
-        font-size: 1.2rem;
-        text-align: center;
+      .box-text {
         background-color: #ffffff;
-        background-size: 10rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        color: #7d889e;
-        
-      }
-
-      .box-text{
-        background-color: #ffffff;
+        flex-shrink: 1;
       }
 
       .box-text > h3 {
         font-weight: 700;
-        font-size: 2rem;
+        font-size: clamp(1rem, 4vw, 1.5rem);
         text-align: center;
         background-color: #ffffff;
-        background-size: 10rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
         color: #1f314f;
+        margin: 0.5rem 0;
       }
 
+      .box-text > h4 {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        text-align: center;
+        background-color: #ffffff;
+        color: #7d889e;
+        margin: 0.5rem 0;
+        line-height: 1.4;
+      }
     </style>
   </head>
   <body>
@@ -81,8 +87,8 @@
       <div class="box-text">
         <h3>Improve your front-end skills by building projects</h3>
         <h4>
-          Scan the QR code to visit Frontend <br>Mentor and take your coding skills
-          to <br>the next level
+          Scan the QR code to visit Frontend Mentor and take your coding skills
+          to the next level
         </h4>
       </div>
     </div>
